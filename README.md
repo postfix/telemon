@@ -36,12 +36,14 @@ Send /newbot and follow prompts to name and username your bot.
 BotFather returns a bot token in the form 123456789:ABCDEF....
 #### Find your chat ID:
 - Start a one-to-one chat with your bot or add it to a group.
-Send any message (e.g., /start).
+Send any message (e.g., start).
 - In a terminal run:
 ```bash
-curl -s "https://api.telegram.org/bot<your-bot-tLook for the JSON field "chat":{"id":<number>,...}; that <number> is your CHAT_ID.oken>/getUpdates"
+# Replace with your actual token, e.g. 123456789:ABCDEFxyz…
+export BOT_TOKEN="123456789:ABCDEF-your-token-here"
+curl -s "https://api.telegram.org/bot${BOT_TOKEN}/getUpdates" \
+  | jq '.result[] .message.chat.id'
 ```
-- Look for the JSON field "chat":{"id":<number>,...}; that <number> is your CHAT_ID.
 
 ### Configuration
 Edit /etc/telemon.conf to adjust:
