@@ -37,7 +37,7 @@ Edit /etc/telemon.conf to adjust:
 - Device list (/dev/sd[b-e], RAID identifiers)
 - Additional IPMI checks or SMART attributes
 ```bash
-# /etc/microserver-alert.conf
+# /etc/telemon.conf
 # ===========================
 # Configuration for microserver-alert.sh
 # Must be owned by root and mode 600.
@@ -52,6 +52,10 @@ CHAT_ID="123456456"
 # MAX_TEMP: any sensor reading strictly above this (°C) triggers an alert
 MAX_TEMP=65
 ```
+```
+chown root:root /etc/telemon.conf
+chmod 600 /etc/telemon.conf
+
 ### Scheduling
 Enable the cron job for periodic checks (every 5 minutes):
 ```bash
