@@ -29,17 +29,29 @@ sudo apt install -y mdadm smartmontools ipmitool curl jq
 git clone https://github.com/postfix/telemon.git /usr/local/bin/telemon
 chmod +x /usr/local/bin/telemon
 ```
-- Configure credentials in the script header:
-```bash
-BOT_TOKEN="<YOUR_TELEGRAM_BOT_TOKEN>"
-CHAT_ID="<YOUR_TELEGRAM_CHAT_ID>"
-```
+
 ### Configuration
-Edit /usr/local/bin/microserver-alert.sh to adjust:
+Edit /etc/telemon.conf to adjust:
+- Credential
 - Thresholds (e.g., MAX_TEMP for temperature alerts)
 - Device list (/dev/sd[b-e], RAID identifiers)
 - Additional IPMI checks or SMART attributes
+```bash
+# /etc/microserver-alert.conf
+# ===========================
+# Configuration for microserver-alert.sh
+# Must be owned by root and mode 600.
 
+# Telegram Bot API token (keep this secret)
+BOT_TOKEN="123456789:ABCDEF-your-actual-bot-token-here"
+
+# Telegram chat ID to send alerts to (user or group)
+CHAT_ID="123456456"
+
+# Thresholds
+# MAX_TEMP: any sensor reading strictly above this (°C) triggers an alert
+MAX_TEMP=65
+```
 ### Scheduling
 Enable the cron job for periodic checks (every 5 minutes):
 ```bash
