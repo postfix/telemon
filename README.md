@@ -1,5 +1,5 @@
 # telemon
- Lightweight Telegram‑based monitoring solution for my HP MicroServer Gen8: cron‑driven RAID, SMART, and IPMI health checks with real‑time alerting via Telegram Bot.
+ Lightweight Telegram‑based monitoring solution for my Home Lab HP MicroServer Gen8: cron‑driven RAID, SMART, and IPMI health checks with real‑time alerting via Telegram Bot.
 
 This sript implements a simple, no‑overhead monitoring system for HP ProLiant MicroServer Gen8 using standard Linux tools and Telegram for notifications. Rather than deploying a full Prometheus/Grafana stack, it uses a cron‑driven Bash script to perform:
 - RAID health checks (mdadm)
