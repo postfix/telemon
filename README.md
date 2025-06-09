@@ -22,8 +22,8 @@ Telegram Bot Token and Chat ID configured
 ###Installation
 - Install dependencies:
   ```bash
-  sudo apt update
-  sudo apt install -y mdadm smartmontools ipmitool curl jq
+ sudo apt update
+ sudo apt install -y mdadm smartmontools ipmitool curl jq
   ```
 - Clone this repository into /usr/local/bin or your preferred location:
 ```bash
