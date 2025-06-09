@@ -26,8 +26,9 @@ sudo apt install -y mdadm smartmontools ipmitool curl jq
 ```
 - Clone this repository into /usr/local/bin or your preferred location:
 ```bash
-git clone https://github.com/postfix/telemon.git /usr/local/bin/telemon
-chmod +x /usr/local/bin/telemon
+git clone https://github.com/postfix/telemon.git
+sudo cp telemon/telemon.sh /usr/local/bin/telemon
+sudo chmod +x /usr/local/bin/telemon
 ```
 
 ### Configuration
@@ -53,13 +54,13 @@ CHAT_ID="123456456"
 MAX_TEMP=65
 ```
 ```
-chown root:root /etc/telemon.conf
-chmod 600 /etc/telemon.conf
+sudo chown root:root /etc/telemon.conf
+sudo chmod 600 /etc/telemon.conf
 ```
 ### Scheduling
 Enable the cron job for periodic checks (every 5 minutes):
 ```bash
 sudo crontab -e
 # Add the line:
-*/5 * * * * /usr/local/bin/microserver-alerts/microserver-alert.sh
+*/5 * * * * /usr/local/bin/telemon
 ```
