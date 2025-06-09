@@ -14,11 +14,11 @@ Features:
 - 📱 Realtime Alerts: Uses Telegram Bot API for push notifications to phone or group.
 - 🚀 Lightweight: No persistent services; single cron job, no database or dashboard.
 
-## Prerequisites
+### Prerequisites
 Debian‑based OS on target MicroServer Gen8 mdadm, smartmontools, ipmitool, curl, jq installed on the server
 Telegram Bot Token and Chat ID configured
 
-###Installation
+### Installation
 - Install dependencies:
   ```bash
  sudo apt update
@@ -35,13 +35,13 @@ chmod +x microserver-alert.sh
 BOT_TOKEN="<YOUR_TELEGRAM_BOT_TOKEN>"
 CHAT_ID="<YOUR_TELEGRAM_CHAT_ID>"
 ```
-###Configuration
+### Configuration
 Edit /usr/local/bin/microserver-alert.sh to adjust:
 - Thresholds (e.g., MAX_TEMP for temperature alerts)
 - Device list (/dev/sd[b-e], RAID identifiers)
 - Additional IPMI checks or SMART attributes
 
-###Scheduling
+### Scheduling
 Enable the cron job for periodic checks (every 10 minutes):
 ```bash
 sudo crontab -e
