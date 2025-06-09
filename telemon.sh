@@ -54,13 +54,14 @@ $smart_out
   fi
 done
 
-### ────── Check 3: IPMI temperatures ──────
+# ── Check IPMI temperatures ──
 mapfile -t highs < <(
-  ipmitool sdr type temperature 2>/dev/null \
-    | awk -v M="$MAX_TEMP" \
-          '$4 ~ /^[0-9]+(\.[0-9]+)?$/ && $4 > M'
+  sudo ipmitool -I open sdr type temperature 2>/dev/null \
+    | awk -F'|' -v M="$MAX_TEMP" '
+        { gsub(/^[ \t]+|[ \t]+$/, "", $5); split($5, a, " "); if (a[1]+0 > M) print $0 }
+      '
 )
-if (( ${#highs[@]} > 0 )); then
+if (( ${#highs[@]} )); then
   msg="🚨 *High temperatures detected!*"
   for line in "${highs[@]}"; do
     msg+="  
