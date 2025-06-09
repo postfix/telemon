@@ -26,9 +26,8 @@ sudo apt install -y mdadm smartmontools ipmitool curl jq
 ```
 - Clone this repository into /usr/local/bin or your preferred location:
 ```bash
-git clone https://github.com/youruser/microserver-telegram-alerts.git /usr/local/bin/microserver-alerts
-cd /usr/local/bin/microserver-alerts
-chmod +x microserver-alert.sh
+git clone https://github.com/postfix/telemon.git /usr/local/bin/telemon
+chmod +x /usr/local/bin/telemon
 ```
 - Configure credentials in the script header:
 ```bash
@@ -42,7 +41,7 @@ Edit /usr/local/bin/microserver-alert.sh to adjust:
 - Additional IPMI checks or SMART attributes
 
 ### Scheduling
-Enable the cron job for periodic checks (every 10 minutes):
+Enable the cron job for periodic checks (every 5 minutes):
 ```bash
 sudo crontab -e
 # Add the line:
