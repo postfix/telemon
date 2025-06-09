@@ -46,5 +46,5 @@ Enable the cron job for periodic checks (every 10 minutes):
 ```bash
 sudo crontab -e
 # Add the line:
-*/10 * * * * /usr/local/bin/microserver-alerts/microserver-alert.sh
+*/5 * * * * /usr/local/bin/microserver-alerts/microserver-alert.sh
 ```
