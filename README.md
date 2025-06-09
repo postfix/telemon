@@ -55,7 +55,7 @@ MAX_TEMP=65
 ```
 chown root:root /etc/telemon.conf
 chmod 600 /etc/telemon.conf
-
+```
 ### Scheduling
 Enable the cron job for periodic checks (every 5 minutes):
 ```bash
