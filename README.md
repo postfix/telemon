@@ -2,21 +2,20 @@
  Lightweight Telegram‑based monitoring solution for my HP MicroServer Gen8: cron‑driven RAID, SMART, and IPMI health checks with real‑time alerting via Telegram Bot.
 
 This sript implements a simple, no‑overhead monitoring system for HP ProLiant MicroServer Gen8 using standard Linux tools and Telegram for notifications. Rather than deploying a full Prometheus/Grafana stack, it uses a cron‑driven Bash script to perform:
-RAID health checks (mdadm)
-SMART disk status (smartctl)
-IPMI sensor readings (temperatures, fans) via ipmitool
+- RAID health checks (mdadm)
+- SMART disk status (smartctl)
+- IPMI sensor readings (temperatures, fans) via ipmitool
 
 When any check indicates a failure or out‑of‑range value, the script sends a formatted alert message to a configured Telegram chat using a Telegram Bot API.
 Features:
-❗️ RAID Degradation Alerts: Detects missing or failed disks in software RAID arrays.
-❗️ SMART Failure Notifications: Monitors overall SMART health for each HDD/SSD.
-❗️ Thermal Alerts: Reads IPMI temperature sensors and notifies on high readings.
-📱 Realtime Alerts: Uses Telegram Bot API for push notifications to phone or group.
-🚀 Lightweight: No persistent services; single cron job, no database or dashboard.
+- ❗️ RAID Degradation Alerts: Detects missing or failed disks in software RAID arrays.
+- ❗️ SMART Failure Notifications: Monitors overall SMART health for each HDD/SSD.
+- ❗️ Thermal Alerts: Reads IPMI temperature sensors and notifies on high readings.
+- 📱 Realtime Alerts: Uses Telegram Bot API for push notifications to phone or group.
+- 🚀 Lightweight: No persistent services; single cron job, no database or dashboard.
 
 ## Prerequisites
-Debian‑based OS on target MicroServer Gen8
-mdadm, smartmontools, ipmitool, curl, jq installed on the server
+Debian‑based OS on target MicroServer Gen8 mdadm, smartmontools, ipmitool, curl, jq installed on the server
 Telegram Bot Token and Chat ID configured
 
 ###Installation
