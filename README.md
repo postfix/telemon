@@ -20,10 +20,10 @@ Telegram Bot Token and Chat ID configured
 
 ### Installation
 - Install dependencies:
-  ```bash
- sudo apt update
- sudo apt install -y mdadm smartmontools ipmitool curl jq
-  ```
+```bash
+sudo apt update
+sudo apt install -y mdadm smartmontools ipmitool curl jq
+```
 - Clone this repository into /usr/local/bin or your preferred location:
 ```bash
 git clone https://github.com/youruser/microserver-telegram-alerts.git /usr/local/bin/microserver-alerts
